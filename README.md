@@ -77,6 +77,9 @@ Model :
 
 </details>
 
+## WER test
+[WER test](https://huggingface.co/spaces/evaluate-metric/wer)
+
 ## Optimisation of the architecture (after)
 
 - Word Boosting
