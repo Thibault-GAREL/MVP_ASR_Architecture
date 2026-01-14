@@ -18,11 +18,13 @@ For each model, make a function **"infer"** to compute the model and to create t
 ## Standardisation for the **JSON** output of an STT model
 
 ```bash
+Batch :
 - Batch ID (or the path + name)
 - Info on the batch (language, total duration of the original audio, context, …)
 - Text transcription of the batch
 - Timestamp for the start and the end of the batch
 
+Model :
 - ASR Model Name
 - Diarisation or not (bool) ==> Deleting or not "Speaker 0" for the WER test
 - Compute duration
@@ -36,53 +38,25 @@ For each model, make a function **"infer"** to compute the model and to create t
 ```bash
 {
   "batch": {
-    "batch_id": "batch_00123",
-    "source": {
-      "path": "/data/audio/",
-      "filename": "meeting_audio.wav"
+    "batch_id": "batch_001",
+    "info": {
+      "language": "English",
+      "total_duration_seconds": 360,
+      "context": "Meeting recording with multiple speakers"
     },
-    "metadata": {
-      "language": "en-US",
-      "context": "Business meeting about quarterly results",
-      "original_audio_duration_sec": 842.5
-    },
+    "true_transcription": "Hello everyone",
     "timestamps": {
-      "start_sec": 0.0,
-      "end_sec": 842.5
+      "start_sec": 0,
+      "end_sec": 34
     }
   },
-
-  "asr_configuration": {
-    "model_name": "Whisper-large-v3",
-    "diarization_enabled": true,
-    "remove_speaker_0_for_wer": false
-  },
-
-  "processing": {
-    "compute_duration_sec": 37.8
-  },
-
-  "transcription": {
-    "full_text": "Good morning everyone. Today we will review the quarterly financial results...",
-    "segments": [
-      {
-        "segment_id": 1,
-        "speaker": "Speaker 1",
-        "start_sec": 0.0,
-        "end_sec": 12.4,
-        "text": "Good morning everyone."
-      },
-      {
-        "segment_id": 2,
-        "speaker": "Speaker 2",
-        "start_sec": 12.5,
-        "end_sec": 28.9,
-        "text": "Today we will review the quarterly financial results."
-      }
-    ]
+  "model": {
+    "asr_model_name": "Whisper-XL",
+    "diarisation": true,
+    "compute_duration_seconds": 45,
+    "output_transcription": "Hello everyone"
   }
 }
-
 ```
 
 </details>
