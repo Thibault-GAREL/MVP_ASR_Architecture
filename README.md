@@ -1,4 +1,5 @@
 # MVP ASR Architecture
+
 The goal is to find the best architecture for the best ASR!
 
 We want to reach: **Efficiency**, **Quickness** and **Frugality**!
@@ -11,7 +12,7 @@ Here's are our architecture idea:
 
 ## Standardisation for each model
 
-For each model, there is a `model_type_name.py` in the folder "models" (either an API or a local processing) that creates the standardised JSON as output. 
+For each model, there is a `model_type_name.py` in the folder "models" (either an API or a local processing) that creates the standardised JSON as output.
 
 For each model, make a function **"infer"** to compute the model and to create the output.
 
@@ -30,7 +31,6 @@ Model :
 - Compute duration
 - Output: Text transcription of the model
 ```
-
 
 <details>
 <summary>See what it looks like</summary>
@@ -77,7 +77,45 @@ Model :
 
 </details>
 
+## Installation
+
+### Prerequisites
+
+- Python 3.8 or higher
+
+### Setup
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/Thibault-GAREL/Rover_architecture.git
+   cd Rover_architecture
+   code .
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Configure environment variables**
+
+   ```bash
+   # Copy the example environment file
+   cp .env.example .env
+
+   # Edit .env with your own values
+   # Update API keys, model paths, and other configuration as needed
+   ```
+
+4. **Run the application**
+   ```bash
+   python src/main.py
+   ```
+
 ## WER test
+
 [WER test](https://huggingface.co/spaces/evaluate-metric/wer)
 
 ## Optimisation of the architecture (after)
