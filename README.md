@@ -11,7 +11,8 @@ Here's are our architecture idea:
 
 ## Standardisation for each model
 
-For each model, there is a `model_type_name.py` in the folder "models" (either an API or a local processing) that creates the standardised JSON as output.
+For each model, there is a `model_type_name.py` in the folder "models" (either an API or a local processing) that creates the standardised JSON as output. 
+
 For each model, make a function **"infer"** to compute the model and to create the output.
 
 ## Standardisation for the **JSON** output of an STT model
