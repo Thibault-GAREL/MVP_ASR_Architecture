@@ -54,7 +54,23 @@ Model :
     "asr_model_name": "Whisper-XL",
     "diarisation": true,
     "compute_duration_seconds": 45,
-    "output_transcription": "Hello everyone"
+    "output_transcription": "Hello everyone",
+    "segments": [
+          {
+            "segment_id": 1,
+            "speaker": "Speaker 1",
+            "start_sec": 0.0,
+            "end_sec": 12.4,
+            "text": "Good morning everyone."
+          },
+          {
+            "segment_id": 2,
+            "speaker": "Speaker 2",
+            "start_sec": 12.5,
+            "end_sec": 28.9,
+            "text": "Today we will review the quarterly financial results."
+          }
+        ]
   }
 }
 ```
