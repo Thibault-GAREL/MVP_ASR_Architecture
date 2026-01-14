@@ -28,6 +28,64 @@ For each model, make a function **"infer"** to compute the model and to create t
 - Output: Text transcription of the model
 ```
 
+
+<details>
+<summary>See what it looks like</summary>
+
+```bash
+{
+  "batch": {
+    "batch_id": "batch_00123",
+    "source": {
+      "path": "/data/audio/",
+      "filename": "meeting_audio.wav"
+    },
+    "metadata": {
+      "language": "en-US",
+      "context": "Business meeting about quarterly results",
+      "original_audio_duration_sec": 842.5
+    },
+    "timestamps": {
+      "start_sec": 0.0,
+      "end_sec": 842.5
+    }
+  },
+
+  "asr_configuration": {
+    "model_name": "Whisper-large-v3",
+    "diarization_enabled": true,
+    "remove_speaker_0_for_wer": false
+  },
+
+  "processing": {
+    "compute_duration_sec": 37.8
+  },
+
+  "transcription": {
+    "full_text": "Good morning everyone. Today we will review the quarterly financial results...",
+    "segments": [
+      {
+        "segment_id": 1,
+        "speaker": "Speaker 1",
+        "start_sec": 0.0,
+        "end_sec": 12.4,
+        "text": "Good morning everyone."
+      },
+      {
+        "segment_id": 2,
+        "speaker": "Speaker 2",
+        "start_sec": 12.5,
+        "end_sec": 28.9,
+        "text": "Today we will review the quarterly financial results."
+      }
+    ]
+  }
+}
+
+```
+
+</details>
+
 ## Optimisation of the architecture (after)
 
 - Word Boosting
