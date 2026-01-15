@@ -21,7 +21,7 @@ For each model, make a function **"infer"** to compute the model and to create t
 ```bash
 Batch :
 - Batch ID (or the path + name)
-- Info on the batch (language, total duration of the original audio, context, …)
+- Info on the batch (language, total duration of the original audio, context…)
 - Text transcription of the batch
 - Timestamp for the start and the end of the batch
 
