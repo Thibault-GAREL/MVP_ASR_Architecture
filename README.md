@@ -17,7 +17,19 @@ The goal is to create a Neural Network able to choose the n best models for a sp
 
 ### Inputs :
 #### The audio batch :
-To link with the Neural Network, we can have a convolution layer.
+To link with the Neural Network, we can have some problemes : different resolutions and durations.
+
+Different strategy is possible to solve it :
+1. For the resolution :
+- Choose a unique frequence (16 kHz) and resample all the audio to this value. But the router will learn some structural noize.
+
+2. For the duration :
+- Padding (shorter audio / add some 0 or noize) / Troncation (longer audio / cut) ==> simple but info lost / the duration are similar 
+- Window cut (cut audio in fix frame with overlaps) ==> cut during a word ?
+- Time/Frequency features (STFT, Log-Mel spectrogram, MFCC) to have a time * frequency image. ==> imposed a human vision + little info lost
+- Global pooling (any cut) ==> crushed the temporal structure
+
+My opinion : Log-Mel spectrogram + CNN + global or attention pulling and fixing the time of each batch with a big overlaps and make a ROVER during this timing  
 
 #### Some metadata :
 ##### Needed :
@@ -104,6 +116,27 @@ Model :
 
 </details>
 
+
+## WER test
+Here is a link for the [WER test](https://huggingface.co/spaces/evaluate-metric/wer) !
+
+
+## Optimisation of the architecture (after)
+
+- Word Boosting
+- MoE
+- FlashAttention
+- vLLM
+- Distillation
+- Quantization
+- Zipformer
+- Pruning
+- Merging
+- Steering
+- Parallelization of the batch, frequency...
+- Diarisation in parallel
+
+
 ---
 
 ## Installation
@@ -142,21 +175,3 @@ Model :
    ```bash
    python src/main.py
    ```
-
-## WER test
-Here is a link for the [WER test](https://huggingface.co/spaces/evaluate-metric/wer) !
-
-## Optimisation of the architecture (after)
-
-- Word Boosting
-- MoE
-- FlashAttention
-- vLLM
-- Distillation
-- Quantization
-- Zipformer
-- Pruning
-- Merging
-- Steering
-- Parallelization of the batch, frequency...
-- Diarisation in parallel
