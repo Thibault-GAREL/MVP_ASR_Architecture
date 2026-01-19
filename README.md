@@ -4,17 +4,44 @@ The goal is to find the best architecture for the best ASR!
 
 We want to reach: **Efficiency**, **Quickness** and **Frugality**!
 
-Here's are our architecture idea:
+Here's our architecture idea:
 
 <p align="center">
   <img src="img/model_router_architecture.png" alt="architecture" style="border-radius:8px">
 </p>
+
+---
+
+## Router
+The goal is to create a Neural Network able to choose the n best models for a specific batch :
+
+### Inputs :
+#### The audio batch :
+To link with the Neural Network, we can have a convolution layer.
+
+#### Some metadata :
+##### Needed :
+- **Resolution** (8Hz (phones) to 44.1 kHz (studio)) ==> + or - robust models
+- **SNR** (Signal-to-Noise Ratio)  
+
+##### Need to discuss with the group :
+- **Languages** (if provided and see how to map)
+
+##### Possible :
+- **Bit Depth** : (ex: 16-bit, 24-bit) ==> sound dynamics
+- **Field / theme** : (ex: medical, legal, conversation) ==> Simplify the process for the router
+- **Duration** : be less energy-consumption (batch or total ?)- 
+
+
+---
 
 ## Standardisation for each model
 
 For each model, there is a `model_type_name.py` in the folder "models" (either an API or a local processing) that creates the standardised JSON as output.
 
 For each model, make a function **"infer"** to compute the model and to create the output.
+
+---
 
 ## Standardisation for the **JSON** output of an STT model
 
@@ -77,6 +104,8 @@ Model :
 
 </details>
 
+---
+
 ## Installation
 
 ### Prerequisites
@@ -130,4 +159,5 @@ Model :
 - Pruning
 - Merging
 - Steering
-- Parallelisation of the batch, frequency...
+- Parallelization of the batch, frequency...
+- Diarisation in parallel
