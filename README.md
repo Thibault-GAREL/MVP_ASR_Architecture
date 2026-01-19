@@ -33,16 +33,18 @@ My opinion : Log-Mel spectrogram + CNN + global or attention pulling and fixing 
 
 #### Some metadata :
 ##### Needed :
-- **Resolution** (8Hz (phones) to 44.1 kHz (studio)) ==> + or - robust models
 - **SNR** (Signal-to-Noise Ratio)  
+- **Duration** of the batch
 
 ##### Need to discuss with the group :
 - **Languages** (if provided and see how to map)
+- **Resolution** (8Hz (phones) to 44.1 kHz (studio)) ==> + or - robust models
+
 
 ##### Possible :
 - **Bit Depth** : (ex: 16-bit, 24-bit) ==> sound dynamics
 - **Field / theme** : (ex: medical, legal, conversation) ==> Simplify the process for the router
-- **Duration** : be less energy-consumption (batch or total ?)- 
+- **Duration** : be less energy-consumption (batch or total ?)
 
 
 ---
