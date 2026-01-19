@@ -144,8 +144,7 @@ Model :
    ```
 
 ## WER test
-
-[WER test](https://huggingface.co/spaces/evaluate-metric/wer)
+Here is a link for the [WER test](https://huggingface.co/spaces/evaluate-metric/wer) !
 
 ## Optimisation of the architecture (after)
 
