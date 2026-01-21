@@ -4,11 +4,19 @@ The goal is to find the best architecture for the best ASR!
 
 We want to reach: **Efficiency**, **Quickness** and **Frugality**!
 
-Here's our architecture idea:
+Here is the model router architecture idea :
+<p align="center">
+  <img src="img/Model_Router_V2.pdf" alt="architecture" style="border-radius:8px">
+</p>
 
+
+<details>
+<summary>See the old architecture idea</summary>
 <p align="center">
   <img src="img/model_router_architecture.png" alt="architecture" style="border-radius:8px">
 </p>
+
+</details>
 
 ---
 
