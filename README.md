@@ -6,14 +6,14 @@ We want to reach: **Efficiency**, **Quickness** and **Frugality**!
 
 Here is the model router architecture idea :
 <p align="center">
-  <img src="img/Model_Router_V2.pdf" alt="architecture" style="border-radius:8px">
+  <img src="img/Model_Router_V2.png" alt="Model_Router_V2" style="border-radius:8px">
 </p>
 
 
 <details>
 <summary>See the old architecture idea</summary>
 <p align="center">
-  <img src="img/model_router_architecture.png" alt="architecture" style="border-radius:8px">
+  <img src="img/model_router_architecture.png" alt="model_router_architecture" style="border-radius:8px">
 </p>
 
 </details>
@@ -53,6 +53,14 @@ My opinion : Log-Mel spectrogram + CNN + global or attention pulling and fixing 
 - **Bit Depth** : (ex: 16-bit, 24-bit) ==> sound dynamics
 - **Field / theme** : (ex: medical, legal, conversation) ==> Simplify the process for the router
 - **Duration** : be less energy-consumption (batch or total ?)
+
+
+#### Idea for the overlaps
+For the overlaps, I got an idea :
+
+<p align="center">
+  <img src="img/ROVER_during_the_overlaps.png" alt="ROVER_during_the_overlaps" style="border-radius:8px">
+</p>
 
 
 ---
