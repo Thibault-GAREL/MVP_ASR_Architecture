@@ -64,6 +64,10 @@ For the overlaps, I got an idea :
 
 ### Outputs
 
+![Inside the router](/img/inside_the_router.png)
+Let's dive inside the router.
+
+
 We thought of a 2 step classification *(method and model selection)* processed simultaneously.
 On one side, the router will select the most suitable method based on the input audio batch, with softmax distribution.
 
