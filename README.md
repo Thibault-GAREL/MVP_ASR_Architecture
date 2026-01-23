@@ -32,16 +32,16 @@ Different strategy is possible to solve it :
 - Choose a unique frequence (16 kHz) and resample all the audio to this value. But the router will learn some structural noize.
 
 2. For the duration :
-- Padding (shorter audio / add some 0 or noize) / Troncation (longer audio / cut) ==> simple but info lost / the duration are similar 
+- Padding (shorter audio / add some 0 or noize) / Troncation (longer audio / cut) ==> simple but info lost / the duration are similar
 - Window cut (cut audio in fix frame with overlaps) ==> cut during a word ?
 - Time/Frequency features (STFT, Log-Mel spectrogram, MFCC) to have a time * frequency image. ==> imposed a human vision + little info lost
 - Global pooling (any cut) ==> crushed the temporal structure
 
-My opinion : Log-Mel spectrogram + CNN + global or attention pulling and fixing the time of each batch with a big overlaps and make a ROVER during this timing  
+My opinion : Log-Mel spectrogram + CNN + global or attention pulling and fixing the time of each batch with a big overlaps and make a ROVER during this timing
 
 #### Some metadata :
 ##### Needed :
-- **SNR** (Signal-to-Noise Ratio)  
+- **SNR** (Signal-to-Noise Ratio)
 - **Duration** of the batch
 
 ##### Need to discuss with the group :
@@ -64,6 +64,12 @@ For the overlaps, I got an idea :
 
 ### Outputs
 
+We thought of a 2 step classification *(method and model selection)* processed simultaneously.
+On one side, the router will select the most suitable method based on the input audio batch, with softmax distribution.
+
+On the other side, the router will select one or multiple models from the entire pool of models based on the choosen method :
+- if a method requiring multiple models *(Corrector, Confidence Based Ensemble, Rover, MoE, CoE)*, the router will pick a selection of $n$ models that will be used to process the input batch together.
+- if the router choose a single model method, then it will select the more suitable model from the models pool, to process the input batch.
 
 ---
 
@@ -197,7 +203,7 @@ Here is a link for the [WER test](https://huggingface.co/spaces/evaluate-metric/
    ```bash
    python src/main.py
    ```
-   
+
 <!--
 Add confiance in the Router
 
