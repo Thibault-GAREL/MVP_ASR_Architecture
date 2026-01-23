@@ -62,6 +62,8 @@ For the overlaps, I got an idea :
   <img src="img/ROVER_during_the_overlaps.png" alt="ROVER_during_the_overlaps" style="border-radius:8px">
 </p>
 
+### Outputs
+
 
 ---
 
@@ -84,6 +86,7 @@ Batch :
 
 Model :
 - ASR Model Name
+- Size Model / Category
 - Diarisation or not (bool) ==> Deleting or not "Speaker 0" for the WER test
 - Compute duration
 - Output: Text transcription of the model
@@ -109,6 +112,7 @@ Model :
   },
   "model": {
     "asr_model_name": "Whisper-XL",
+    "size_category": 0 or 1, "small/large"
     "diarisation": true,
     "compute_duration_seconds": 45,
     "output_transcription": "Hello everyone",
