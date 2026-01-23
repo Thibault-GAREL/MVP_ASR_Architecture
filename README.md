@@ -13,7 +13,7 @@ Here is the model router architecture idea :
 <details>
 <summary>See the old architecture idea</summary>
 <p align="center">
-  <img src="img/model_router_architecture.png" alt="model_router_architecture" style="border-radius:8px">
+  <img src="img/Model_Router_V3.png" alt="model_router_architecture" style="border-radius:8px">
 </p>
 
 </details>
